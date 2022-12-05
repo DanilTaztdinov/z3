@@ -11,7 +11,7 @@ import android.widget.CheckBox
 import android.widget.EditText
 import androidx.fragment.app.Fragment
 
-class CrimeFragment: Fragment() {
+class CrimeFragment : Fragment() {
     private lateinit var crime: Crime
     private lateinit var titleField: EditText
     private lateinit var dateButton: Button
@@ -26,7 +26,7 @@ class CrimeFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate (R.layout.fragment_crime, container, false)
+        val view = inflater.inflate(R.layout.fragment_crime, container, false)
         titleField = view.findViewById(R.id.crime_title) as EditText
         dateButton = view.findViewById(R.id.crime_date) as Button
         solvedCheckBox = view.findViewById(R.id.crime_solved) as CheckBox
@@ -36,6 +36,7 @@ class CrimeFragment: Fragment() {
         }
         return view
     }
+
     override fun onStart() {
         super.onStart()
         val titleWatcher = object : TextWatcher {
@@ -45,7 +46,9 @@ class CrimeFragment: Fragment() {
                 count: Int,
                 after: Int
             ) {
+
             }
+
             override fun onTextChanged(
                 sequence: CharSequence?,
                 start: Int,
@@ -54,12 +57,15 @@ class CrimeFragment: Fragment() {
             ) {
                 crime.title = sequence.toString()
             }
-            override fun afterTextChanged(sequence: Editable?) {
+
+            override fun
+                    afterTextChanged(sequence: Editable?) {
             }
         }
         titleField.addTextChangedListener(titleWatcher)
-        solvedCheckBox.apply { setOnCheckedChangeListener(){_, isChecked -> crime.isSolved = isChecked}
+        solvedCheckBox.apply { setOnCheckedChangeListener{ _, isChecked -> crime.isSolved = isChecked
+        }
         }
     }
-
 }
+

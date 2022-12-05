@@ -2,13 +2,8 @@ package com.bignerdranch.android.criminalinternt
 
 import androidx.lifecycle.ViewModel
 
-class CrimeListViewModel : ViewModel() {
-
-    val crimes = mutableListOf<Crime>()
-
-    init {
-        val crime = Crime()
-        crime.title = "Crime #$1"
-        crime.isSolved = false
-    }
+class CrimeListViewModel: ViewModel()
+{
+    private val crimeRepository = CrimeRepository.get()
+    val crimeListLiveData = crimeRepository.getCrimes()
 }

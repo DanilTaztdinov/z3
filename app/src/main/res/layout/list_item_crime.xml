@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:padding="8dp">
 
     <TextView
-        android:id="@+id/crime_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Crime Title"/>
+        android:id="@+id/crime_title"
+        android:text="Crime Title">
+    </TextView>
 
     <TextView
-        android:id="@+id/crime_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Crime Date"/>
+        android:id="@+id/crime_date"
+        android:text="Crime Date">
+    </TextView>
+
 </LinearLayout>
